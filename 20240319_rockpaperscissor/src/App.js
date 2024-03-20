@@ -16,16 +16,30 @@ const choice = {
     img: "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbmjB2s%2FbtqXHhp6kpG%2FTH14W4U612SxKo9uuR2sB0%2Fimg.png",
   },
 };
+
+const state = {
+  userDefault: {
+    name: "user",
+    img: "https://i.pinimg.com/564x/42/aa/be/42aabe8a7bb5797e92889b64f36c0fd2.jpg",
+  },
+  computerDefault: {
+    name: "computer",
+    img: "https://i.pinimg.com/564x/16/08/e4/1608e4f3e81f666437ef984884908a77.jpg",
+  },
+};
+
 function App() {
-  const [userSelect, setUserSelect] = useState(null);
-  const [computerSelect, setComputerSelect] = useState(null);
-  const [result, setResult] = useState(null);
-  const [userResult, setUserResult] = useState(null);
+  const [userSelect, setUserSelect] = useState(state.userDefault);
+  const [computerSelect, setComputerSelect] = useState(state.computerDefault);
+  const [result, setResult] = useState("");
+  const [userResult, setUserResult] = useState("");
 
   const play = (userChoice) => {
     setUserSelect(choice[userChoice]);
+
     let computerChoice = randomChoice();
     setComputerSelect(computerChoice);
+
     setResult(judgement(choice[userChoice], computerChoice));
     setUserResult(lastResult(choice[userChoice], computerChoice));
   };
