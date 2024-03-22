@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Box from "./component/Box";
 
 function App() {
   let counter = 0;
   const [counter2, setCounter2] = useState(0);
+  const [value, setValue] = useState(0);
   const increase = () => {
     counter = counter + 1;
-    setCounter2(counter2 + 1);
+    // setCounter2(counter2 + 1);
+    setValue(value + 2);
     console.log(counter, counter2);
   };
 
@@ -20,8 +22,20 @@ function App() {
   // app 다시 re render
   // let counter = 0 을 거치면서 counter 값은 0으로 초기화가 된다
   // 업데이트 된 state 값이 보인다
+  useEffect(() => {
+    console.log("use");
+  }, []);
+
+  useEffect(() => {
+    console.log("use2", counter2);
+  }, [counter2]);
+
+  useEffect(() => {
+    console.log("use3", value);
+  }, [value]);
   return (
     <div>
+      {console.log("render")}
       <div>{counter}</div>
       <div>state: {counter2}</div>
       <button onClick={increase}>click</button>
