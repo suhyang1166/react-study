@@ -26,7 +26,7 @@ function App() {
 
   console.log(process.env.REACT_APP_WEATHER_API_KEY);
   const getWeatherByCurrentLocation = async (lat, lon) => {
-    const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`;
+    const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=df4650871358241dcd5c63e54e443ab8&units=metric`;
 
     let response = await fetch(URL);
     let data = await response.json();
