@@ -11,7 +11,7 @@ const WeatherBox = ({ weather }) => {
           <h3>
             {`${weather?.main.temp}℃`} /{`${weather?.main.temp * 1.8 + 32}℃`}
           </h3>
-          <h4>{weather?.weather[0].description}</h4>
+          <h4>{weather?.weather[0]?.description}</h4>
         </div>
       </section>
     </div>
