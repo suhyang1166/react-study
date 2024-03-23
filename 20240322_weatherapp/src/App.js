@@ -28,11 +28,9 @@ function App() {
   const getWeatherByCurrentLocation = async (lat, lon) => {
     const URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}&units=metric`;
 
-    let response = await fetch(URL)
-      .then((response) => response.json())
-      .then((data) => {
-        setWeather(data);
-      });
+    let response = await fetch(URL);
+    let data = await response.json();
+    setWeather(data);
   };
 
   useEffect(() => {
