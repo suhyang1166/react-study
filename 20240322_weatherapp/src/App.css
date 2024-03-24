@@ -17,7 +17,9 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  background: url(./img/cloud.jpg) center / cover no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: -1;
   position: relative;
   font-family: "Trykker", serif;
@@ -40,11 +42,15 @@ section {
   color: #fff;
 }
 .site {
-  font-size: 38px;
+  width: 180px;
+  font-size: 40px;
   text-transform: uppercase;
   position: relative;
+  margin-right: 30px;
 }
 .text {
+  width: 400px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +77,7 @@ section {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
   z-index: -1;
 }
-.buttonWrap button {
+/* .buttonWrap button {
   border: 1px solid #fff;
   border-radius: 10px;
   padding: 5px 10px;
@@ -87,3 +93,10 @@ section {
   box-shadow: 0 0 10px palevioletred;
   transform: scale(1.1);
 }
+.buttonWrap button.warning {
+  border: 1px solid palevioletred;
+  color: #fff;
+  background: palevioletred;
+  box-shadow: 0 0 10px palevioletred;
+  transform: scale(1.1);
+} */
