@@ -20,7 +20,7 @@ function App() {
   const [city, setCity] = useState(null);
   const [loading, setLoading] = useState(false);
   const [apiError, setAPIError] = useState("");
-  const [cityImg, setCityImg] = useState(null);
+  const [cityImg, setCityImg] = useState("now.jpg");
 
   const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -79,6 +79,7 @@ function App() {
   const currentCity = (city) => {
     if (city === "current") {
       setCity(null);
+      setCityImg("now.jpg");
     } else {
       setCity(city);
     }
@@ -99,8 +100,8 @@ function App() {
       case "SEOUL":
         imgURL = "seoul.jpg";
         break;
-      case "current":
-        imgURL = "seoul.jpg";
+      default:
+        imgURL = "now.jpg";
     }
     setCityImg(imgURL);
   };
