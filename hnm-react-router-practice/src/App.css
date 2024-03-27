@@ -1,0 +1,141 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header */
+.wrap {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-main {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 13px;
+}
+.header-main .user-service {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+.logo-img {
+  height: 70px;
+}
+.logo-img img {
+  margin-top: 28px;
+}
+.header-main .login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.user-info {
+  display: flex;
+  cursor: pointer;
+}
+.font {
+  font-size: 24px;
+}
+.user-info div:last-child {
+  line-height: 24px;
+  margin-left: 10px;
+}
+.menu-area {
+  width: 90%;
+  height: 40px;
+  display: flex;
+  position: relative;
+}
+.menu-list {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  gap: 20px;
+}
+.menu-list li {
+  text-align: center;
+  padding: 5px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.search {
+  width: 15%;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  border-bottom: 1px solid #000;
+  margin-top: 5px;
+}
+.search .font02 {
+  display: inline-block;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+.search input {
+  display: inline-block;
+  width: 160px;
+  border: none;
+  padding-left: 10px;
+}
+.search input:focus {
+  outline: none;
+}
+.text-section {
+  margin-bottom: 20px;
+}
+.text-section p {
+  font-size: 13px;
+}
+
+/* item-list */
+.item-list {
+  width: 100%;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.item-list img {
+  display: inline-block;
+  width: 100%;
+}
+.item-list div {
+  width: 100%;
+  height: 25px;
+}
+.item-list div:nth-of-type(1),
+.item-list div:nth-of-type(4) {
+  line-height: 25px;
+  font-size: 14px;
+}
+.item-list:hover {
+  transform: scale(1.05);
+}
