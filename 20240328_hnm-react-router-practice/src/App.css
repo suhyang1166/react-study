@@ -139,3 +139,38 @@ a {
 .item-list:hover {
   transform: scale(1.05);
 }
+
+/* login */
+.login {
+  width: 600px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.product-img {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product {
+  padding-top: 60px;
+}
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.product-detail select {
+  border-radius: 4px;
+  padding: 6px;
+}
+.product-detail button {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 6px;
+  border-radius: 6px;
+}

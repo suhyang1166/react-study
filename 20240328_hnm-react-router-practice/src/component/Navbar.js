@@ -5,6 +5,7 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const headerList = ["고객 서비스", "뉴스레터", "매장찾기"];
@@ -19,6 +20,12 @@ const Navbar = () => {
     "Sale",
     "지속가능성",
   ];
+
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate("/login");
+  };
 
   return (
     <div className="wrap">
@@ -37,7 +44,7 @@ const Navbar = () => {
           ></img>
         </div>
         <div className="login-button">
-          <div className="user-info">
+          <div className="user-info" onClick={goToLogin}>
             <div>
               <FontAwesomeIcon icon={faUser} className="font" />
             </div>
