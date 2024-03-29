@@ -26,7 +26,10 @@ function App() {
 
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar
+        authenticate={authenticate}
+        setAuthenticate={setAuthenticate}
+      ></Navbar>
       <Routes>
         <Route path="/" element={<ProductAll></ProductAll>}></Route>
         <Route

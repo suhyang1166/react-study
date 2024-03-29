@@ -174,3 +174,84 @@ a {
   padding: 6px;
   border-radius: 6px;
 }
+.icon02,
+.side-menu {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .wrap {
+    height: 120px;
+  }
+  .header-main {
+    position: relative;
+  }
+  .icon02 {
+    display: block;
+    opacity: 1;
+    font-size: 24px;
+    padding-top: 10px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    cursor: pointer;
+  }
+  .header-main .user-service li,
+  .icon01,
+  .user-info:nth-child(2),
+  .user-info:nth-child(3),
+  .menu-area,
+  .text-section {
+    display: none;
+  }
+  .user-info:nth-child(1) {
+    flex-flow: wrap;
+  }
+  .logo-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .side-menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden;
+    transition: all 0.3s;
+    padding-top: 60px;
+    z-index: 2;
+  }
+  .side-menu-list button {
+    margin: 10px;
+    border: none;
+    background: none;
+    width: 120px;
+    font-size: 16px;
+    transition: all 0.3s;
+  }
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border: none;
+    background: none;
+  }
+
+  .side-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-menu-list button:hover {
+    color: crimson;
+  }
+}

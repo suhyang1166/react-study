@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faBagShopping } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
+import {
+  faBagShopping,
+  faBarsStaggered,
+  faEllipsis,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
+  let [width, setWidth] = useState(0);
+
   const headerList = ["고객 서비스", "뉴스레터", "매장찾기"];
 
   const menuList = [
@@ -23,8 +28,14 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
-  const goToLogin = () => {
-    navigate("/login");
+  const search = (e) => {
+    if (e.key === "Enter") {
+      // 입력한 검색어를 읽어와서 url을 바꿔준다
+      let keyword = e.target.value;
+      e.target.value = "";
+
+      navigate(`/?q=${keyword}`);
+    }
   };
 
   return (
@@ -34,22 +45,48 @@ const Navbar = () => {
           {headerList.map((header) => (
             <li>{header}</li>
           ))}
-          <FontAwesomeIcon icon={faEllipsis} />
+          <FontAwesomeIcon className="icon01" icon={faEllipsis} />
+          <FontAwesomeIcon
+            className="icon02"
+            icon={faBarsStaggered}
+            onClick={() => setWidth(250)}
+          />
         </ul>
-        <div className="logo-img">
-          <img
-            width={60}
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png"
-            alt="logo"
-          ></img>
+        <div className="side-menu" style={{ width: width }}>
+          <button className="closebtn" onClick={() => setWidth(0)}>
+            &times;
+          </button>
+          <div className="side-menu-list" id="menu-list">
+            {menuList.map((menu, index) => (
+              <button key={index}>{menu}</button>
+            ))}
+          </div>
+        </div>
+        <div className="logo-img" onClick={() => navigate("/")}>
+          <Link to="/">
+            <img
+              width={60}
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png"
+              alt="logo"
+            ></img>
+          </Link>
         </div>
         <div className="login-button">
-          <div className="user-info" onClick={goToLogin}>
-            <div>
-              <FontAwesomeIcon icon={faUser} className="font" />
+          {authenticate ? (
+            <div className="user-info" onClick={() => setAuthenticate(false)}>
+              <div>
+                <FontAwesomeIcon icon={faUser} className="font" />
+              </div>
+              <div>로그아웃</div>
             </div>
-            <div>로그인</div>
-          </div>
+          ) : (
+            <div className="user-info" onClick={() => navigate("/login")}>
+              <div>
+                <FontAwesomeIcon icon={faUser} className="font" />
+              </div>
+              <div>로그인</div>
+            </div>
+          )}
           <div className="user-info">
             <div>
               <FontAwesomeIcon icon={faHeart} className="font" />
@@ -72,9 +109,14 @@ const Navbar = () => {
         </ul>
         <div className="search">
           <FontAwesomeIcon icon={faSearch} className="font02" />
-          <input type="text" placeholder="제품 검색"></input>
+          <input
+            type="text"
+            placeholder="제품 검색"
+            onKeyPress={(e) => search(e)}
+          ></input>
         </div>
       </section>
+
       <section className="text-section">
         <p>회원 혜택:3만원 이상 무료배송 & 첫구매 10% 할인</p>
       </section>
