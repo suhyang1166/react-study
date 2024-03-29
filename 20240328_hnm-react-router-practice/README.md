@@ -13,5 +13,6 @@
 6. 로그아웃이 되면 상품 디테일페이지를 볼수없다, 다시 로그인 페이지가 보인다
 7. 로그인을 하면 로그아웃, 로그아웃 하면 로구인
 8. 상품을 검색할 수 있다
-
-   -로그인 페이지 > bootstrap 이용
+---
+- 로그인 페이지 > bootstrap 이용
+- My JSON Server 이용 (https://my-json-server.typicode.com/)
