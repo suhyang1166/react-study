@@ -34,13 +34,13 @@ const ContactForm = () => {
       <Form.Group className="mb-3" controlId="formContact">
         <Form.Label>전화번호</Form.Label>
         <Form.Control
-          type="number"
+          type="text"
           placeholder="전화번호를 입력해주세요"
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" className="formBtn">
         추가
       </Button>
     </Form>
