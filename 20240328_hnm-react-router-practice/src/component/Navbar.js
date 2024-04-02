@@ -9,12 +9,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authenticateAction } from "../redux/actions/authenticateAction";
 
-const Navbar = ({ authenticate, setAuthenticate }) => {
+const Navbar = () => {
   let [width, setWidth] = useState(0);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const authenticate = useSelector((state) => state.auth?.authenticate);
 
   const headerList = ["고객 서비스", "뉴스레터", "매장찾기"];
-
   const menuList = [
     "Women",
     "Men",
@@ -26,7 +30,13 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
     "지속가능성",
   ];
 
-  const navigate = useNavigate();
+  const goToLogin = () => {
+    if (authenticate) {
+      dispatch(authenticateAction.logout()); // authenticateAction에서 logout 액션 사용
+    } else {
+      navigate("/login");
+    }
+  };
 
   const search = (e) => {
     if (e.key === "Enter") {
@@ -73,7 +83,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         </div>
         <div className="login-button">
           {authenticate ? (
-            <div className="user-info" onClick={() => setAuthenticate(false)}>
+            <div className="user-info" onClick={goToLogin}>
               <div>
                 <FontAwesomeIcon icon={faUser} className="font" />
               </div>

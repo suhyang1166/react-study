@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,27 +18,13 @@ import PrivateRoute from "./route/PrivateRoute";
 // 8. 상품을 검색할 수 있다
 
 function App() {
-  const [authenticate, setAuthenticate] = useState(false); // true-login false-logout
-  useEffect(() => {
-    console.log("a", authenticate);
-  });
-
   return (
     <div>
-      <Navbar
-        authenticate={authenticate}
-        setAuthenticate={setAuthenticate}
-      ></Navbar>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<ProductAll></ProductAll>}></Route>
-        <Route
-          path="/login"
-          element={<Login setAuthenticate={setAuthenticate}></Login>}
-        ></Route>
-        <Route
-          path="/products/:id"
-          element={<PrivateRoute authenticate={authenticate}></PrivateRoute>}
-        ></Route>
+        <Route path="/" element={<ProductAll />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/products/:id" element={<PrivateRoute />} />
       </Routes>
     </div>
   );
