@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { productAction } from "../redux/actions/productAction";
+import { fetchProductDetail } from "../redux/reducers/productSlice";
 
 const ProductDetail = () => {
   let { id } = useParams();
@@ -10,8 +10,8 @@ const ProductDetail = () => {
 
   const product = useSelector((state) => state.product.selectedItem);
 
-  const getProductDetail = async () => {
-    dispatch(productAction.getProductDetail(id));
+  const getProductDetail = () => {
+    dispatch(fetchProductDetail(id));
   };
 
   useEffect(() => {
