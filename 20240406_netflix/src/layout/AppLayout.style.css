@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   background: #000;
   color: #fff;
+  font-family: "Noto Sans", sans-serif;
 }
 .appLayout {
   width: 100%;
   height: 80px;
+  z-index: 10;
 }
 .navbar {
   display: inline-block;
@@ -57,4 +60,14 @@ body {
 .btn:hover {
   background: none;
   color: red;
+}
+
+@media screen and (max-width: 991px) {
+  .collapse {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: #000 !important;
+    z-index: 10;
+  }
 }

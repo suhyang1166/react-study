@@ -8,6 +8,8 @@
   align-items: center;
   text-align: center;
   font-family: "Bebas Neue", sans-serif;
+  background: #fff;
+  color: #000;
 }
 .browser {
   display: flex;
