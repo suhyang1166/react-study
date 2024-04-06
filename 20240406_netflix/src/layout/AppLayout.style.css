@@ -1,0 +1,60 @@
+body {
+  background: #000;
+  color: #fff;
+}
+.appLayout {
+  width: 100%;
+  height: 80px;
+}
+.navbar {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #000 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  display: inline-block;
+}
+.link {
+  display: inline-block;
+  height: 100%;
+  color: #fff !important;
+}
+.logoImg {
+  display: inline-block;
+  width: 120px;
+  height: 100%;
+}
+.logoImg p {
+  width: 120px;
+  height: 60px;
+  background: url(/public/img/Netflix-Logo.jpg) center/contain no-repeat;
+}
+.me-2 {
+  background: #000;
+  color: #fff;
+}
+.me-2::placeholder {
+  color: #fff;
+}
+.me-2:focus {
+  color: #fff;
+  background: rgb(65, 65, 65);
+  outline: #fff;
+  box-shadow: none;
+  border: 1px solid red;
+}
+.btn {
+  color: #fff;
+  border: none;
+}
+.btn:hover {
+  background: none;
+  color: red;
+}
