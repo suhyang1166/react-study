@@ -7,11 +7,7 @@ const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
   console.log("ddd", data);
   if (isLoading) {
-    return (
-      <div class="container">
-        <div id="spinner"></div>
-      </div>
-    );
+    return <h1>Loading...</h1>;
   }
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
