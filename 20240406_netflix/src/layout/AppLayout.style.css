@@ -20,7 +20,8 @@ body {
 }
 .container {
   width: 100%;
-  max-width: 1920px;
+  max-width: 100%;
+  padding: 0 50px;
   height: 100%;
   display: inline-block;
 }
@@ -63,11 +64,29 @@ body {
 }
 
 @media screen and (max-width: 991px) {
-  .collapse {
-    width: 100%;
+  .container {
+    width: 120%;
+    max-width: 120%;
     height: 100%;
+    margin: 0;
+  }
+  .collapse {
+    width: 991px;
+    max-width: 991px;
+    height: 180px;
     display: inline-block;
     background: #000 !important;
     z-index: 10;
+    padding: 20px;
+  }
+  .me-2 {
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+  }
+  .me-2 a {
+    width: 100%;
+    max-width: 100%;
+    display: block;
   }
 }

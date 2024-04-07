@@ -29,12 +29,12 @@ const AppLayout = () => {
             >
               <Link to="/">
                 <Nav.Link href="#action1" className="link">
-                  Home
+                  HOME
                 </Nav.Link>
               </Link>
               <Link to="/movies">
                 <Nav.Link href="#action2" className="link">
-                  Movies
+                  MOVIES
                 </Nav.Link>
               </Link>
             </Nav>

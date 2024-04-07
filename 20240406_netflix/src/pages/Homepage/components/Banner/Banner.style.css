@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Kranky&display=swap");
 .banner {
   width: 100%;
   height: 60vh;
@@ -36,8 +37,32 @@
   text-transform: uppercase;
   margin-bottom: 20px;
   font-weight: bold;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+  font-family: "Kranky", serif;
+  letter-spacing: 3px;
+  color: #b20710;
 }
 .banner-text-area p {
   z-index: 2;
+}
+
+@media screen and (max-width: 500px) {
+  .banner-text-area {
+    position: relative;
+  }
+  .banner-text-area > div {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+  }
+  .banner-text-area h1 {
+    font-size: 24px;
+  }
+  .banner-text-area p {
+    z-index: 2;
+    font-size: 14px;
+  }
 }
