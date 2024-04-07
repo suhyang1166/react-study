@@ -36,8 +36,8 @@ body {
 }
 .logoImg p {
   width: 120px;
-  height: 60px;
-  background: url(/public/img/Netflix-Logo.jpg) center/contain no-repeat;
+  height: 55px;
+  background: url(/public/img/SUUMOVIE.svg) center/contain no-repeat;
 }
 .me-2 {
   background: #000;
