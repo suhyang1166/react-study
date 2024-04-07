@@ -6,7 +6,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
-
   transition: all 0.3s;
 }
 .movie-card:hover {

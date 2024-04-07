@@ -1,7 +1,7 @@
 import React from "react";
 import "./Banner.style.css";
 import Alert from "react-bootstrap/Alert";
-import { usePopularMoviesQuery } from "../../../../hooks/useMovies";
+import { usePopularMoviesQuery, imageURL } from "../../../../hooks/useMovies";
 
 const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
@@ -15,10 +15,10 @@ const Banner = () => {
   return (
     <div
       style={{
-        backgroundImage:
-          "url(" +
-          `https://media.themoviedb.org/t/p/w1066_and_h600_bestv2/${data?.results[0].backdrop_path}` +
-          ")",
+        backgroundImage: `url("${imageURL(
+          "original",
+          data?.results[0].backdrop_path
+        )}")`,
       }}
       className="banner"
     >
