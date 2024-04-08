@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 body {
   background: #000;
-  color: #fff;
+  color: #fff !important;
   font-family: "Noto Sans", sans-serif;
   overflow-x: hidden;
 }
@@ -9,11 +9,12 @@ body {
   width: 100%;
   height: 80px;
   z-index: 10;
+  background: #000;
+  color: #fff;
 }
 .navbar {
-  display: inline-block;
   width: 100%;
-  height: 100%;
+  height: auto;
   background-color: #000 !important;
   display: flex;
   justify-content: center;
@@ -34,12 +35,12 @@ body {
 .logoImg {
   display: inline-block;
   width: 120px;
-  height: 100%;
 }
 .logoImg p {
   width: 120px;
-  height: 55px;
+  height: 30px;
   background: url(/public/img/SUUMOVIE.svg) center/contain no-repeat;
+  margin-top: 20px;
 }
 .me-2 {
   background: #000;
@@ -62,32 +63,4 @@ body {
 .btn:hover {
   background: none;
   color: red;
-}
-
-@media screen and (max-width: 991px) {
-  .container {
-    width: 120%;
-    max-width: 120%;
-    height: 100%;
-    margin: 0;
-  }
-  .collapse {
-    width: 991px;
-    max-width: 991px;
-    height: 180px;
-    display: inline-block;
-    background: #000 !important;
-    z-index: 10;
-    padding: 20px;
-  }
-  .me-2 {
-    display: inline-block;
-    width: 100%;
-    max-width: 100%;
-  }
-  .me-2 a {
-    width: 100%;
-    max-width: 100%;
-    display: block;
-  }
 }

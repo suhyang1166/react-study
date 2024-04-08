@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./AppLayout.style.css";
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import Button from "react-bootstrap/Button";
@@ -8,9 +8,19 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 const AppLayout = () => {
+  const [keyword, setKeyword] = useState("");
+  const navigate = useNavigate();
+
+  const searchByKeyword = (e) => {
+    e.preventDefault();
+    // url을 바꿔주기
+    navigate(`/movies?q=${keyword}`);
+    setKeyword("");
+  };
+
   return (
     <div className="appLayout">
       <Navbar expand="lg" className="bg-body-tertiary navbar">
@@ -38,7 +48,7 @@ const AppLayout = () => {
                 </Nav.Link>
               </Link>
             </Nav>
-            <Form className="d-flex">
+            <Form className="d-flex" onSubmit={searchByKeyword}>
               <Button variant="outline-success">
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </Button>
@@ -47,6 +57,10 @@ const AppLayout = () => {
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
+                value={keyword}
+                onChange={(e) => {
+                  setKeyword(e.target.value);
+                }}
               />
             </Form>
           </Navbar.Collapse>
