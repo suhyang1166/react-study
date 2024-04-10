@@ -2,11 +2,14 @@ import React from "react";
 import Badge from "react-bootstrap/Badge";
 import "./MovieCard.style.css";
 import { useMovieGenreQuery } from "../../hooks/useMovieGenre";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
   const { data: genreData } = useMovieGenreQuery();
+  const navigate = useNavigate();
 
   const showGenre = (genreIdList) => {
+    console.log(genreIdList);
     if (!genreData) return [];
     const genreNameList = genreIdList.map((id) => {
       const genreObj = genreData.find((genre) => genre.id === id);
@@ -21,8 +24,14 @@ const MovieCard = ({ movie }) => {
     : movie.poster_path
     ? `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`
     : "기본 이미지 경로"; // 기본 이미지가 없는 경우에 대한 처리
+
+  const goToMovieDetail = () => {
+    navigate(`/movies/${movie.id}`);
+  };
+
   return (
     <div
+      onClick={goToMovieDetail}
       style={{
         backgroundImage: `url(${imagePath})`,
       }}

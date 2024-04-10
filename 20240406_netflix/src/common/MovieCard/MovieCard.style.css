@@ -7,6 +7,8 @@
   background-size: cover;
   border-radius: 10px;
   transition: all 0.3s;
+  cursor: pointer;
+  font-family: "Orbit", sans-serif;
 }
 .movie-card:hover {
   transform: scale(1.2) translateZ(20px);
@@ -48,10 +50,11 @@
   font-size: 22px;
   text-transform: uppercase;
   font-weight: bold;
-  font-family: "Kranky", serif;
+  font-family: "Orbit", sans-serif;
 }
 .badge {
   margin-right: 5px;
+  font-family: "Orbit", sans-serif;
 }
 
 @media screen and (max-width: 991px) {

@@ -38,13 +38,30 @@
   margin-top: 80px;
   margin-bottom: 20px;
   font-weight: bold;
-  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
-  font-family: "Kranky", serif;
+  text-shadow: 0 0 5px #fff;
+  font-family: "Orbit", sans-serif;
   letter-spacing: 3px;
   color: #b20710;
 }
 .banner-text-area p {
   z-index: 2;
+  font-family: "Orbit", sans-serif;
+}
+.banner-btn {
+  color: #b20710;
+  width: 120px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  font-family: "Orbit", sans-serif;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.banner-btn:hover {
+  background: #b20710;
+  color: #fff;
 }
 
 @media screen and (max-width: 500px) {
@@ -53,17 +70,19 @@
   }
   .banner-text-area > div {
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
     text-align: center;
   }
   .banner-text-area h1 {
-    font-size: 24px;
+    font-size: 42px;
   }
   .banner-text-area p {
     z-index: 2;
     font-size: 14px;
+  }
+  .banner-btn {
   }
 }
