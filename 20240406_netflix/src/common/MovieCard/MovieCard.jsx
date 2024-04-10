@@ -15,13 +15,16 @@ const MovieCard = ({ movie }) => {
 
     return genreNameList;
   };
+
+  const imagePath = movie.backdrop_path
+    ? `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.backdrop_path}`
+    : movie.poster_path
+    ? `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`
+    : "기본 이미지 경로"; // 기본 이미지가 없는 경우에 대한 처리
   return (
     <div
       style={{
-        backgroundImage:
-          "url(" +
-          `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.backdrop_path}` +
-          ")",
+        backgroundImage: `url(${imagePath})`,
       }}
       className="movie-card"
     >
@@ -42,9 +45,9 @@ const MovieCard = ({ movie }) => {
               <Badge bg="danger">{id}</Badge>
             ))}
           </div>
-          <div>average : {movie.vote_average}</div>
-          <div>popularity : {movie.popularity}</div>
-          <div>adult : {movie.adult ? "over 18" : "ALL"}</div>
+          <div>⭐ {movie.vote_average.toFixed(1)}</div>
+          <div>👨‍👩‍👧‍👦 {Math.round(movie.popularity).toLocaleString("ko-KR")}</div>
+          <div>{movie.adult ? "over 18" : "ALL"}</div>
         </div>
       </div>
     </div>

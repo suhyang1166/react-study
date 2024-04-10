@@ -20,10 +20,10 @@
   align-items: center;
   flex: 1 !important;
   gap: 50px !important;
-  width: 430px !important;
+  width: 360px !important;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 991px) {
   .popular-slide {
     overflow: hidden;
     position: relative;
@@ -38,7 +38,7 @@
   .carousel-container {
     overflow: hidden;
     width: 100%;
-    height: 450px;
+    height: 620px;
   }
   .movie-slider {
     display: flex !important;
@@ -46,6 +46,6 @@
     align-items: center !important;
     flex: 1 !important;
     gap: 50px !important;
-    width: 360px !important;
+    width: 280px !important;
   }
 }

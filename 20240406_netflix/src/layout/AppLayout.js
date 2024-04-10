@@ -49,7 +49,7 @@ const AppLayout = () => {
               </Link>
             </Nav>
             <Form className="d-flex" onSubmit={searchByKeyword}>
-              <Button variant="outline-success">
+              <Button variant="outline-success" type="submit">
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </Button>
               <Form.Control
@@ -67,6 +67,10 @@ const AppLayout = () => {
         </Container>
       </Navbar>
       <Outlet />
+      <footer className="footer">
+        <div></div>
+        <p>Welcome to my page</p>
+      </footer>
     </div>
   );
 };

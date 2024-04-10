@@ -1,0 +1,29 @@
+.card-grid {
+  width: 100%;
+  gap: 5px;
+}
+.row,
+.col {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pagination {
+  margin: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-link {
+  background: none;
+  border: none;
+  color: #fff;
+}
+.page-item.disabled > a {
+  background: none;
+  color: gray;
+}
