@@ -70,19 +70,23 @@
   }
   .banner-text-area > div {
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
     text-align: center;
   }
   .banner-text-area h1 {
-    font-size: 42px;
+    font-size: 36px;
   }
   .banner-text-area p {
     z-index: 2;
-    font-size: 14px;
+    font-size: 12px;
   }
   .banner-btn {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+    z-index: 30;
   }
 }

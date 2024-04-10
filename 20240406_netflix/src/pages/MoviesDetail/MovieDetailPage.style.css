@@ -13,3 +13,25 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+.detail-text {
+  width: 50%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (max-width: 991px) {
+  .movie-detail {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .detail-img {
+    width: 100%;
+    height: 65vh;
+    /* background-size: cover; */
+  }
+  .detail-text {
+    gap: 10px;
+  }
+}

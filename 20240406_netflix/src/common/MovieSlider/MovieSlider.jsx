@@ -23,7 +23,7 @@ const MovieSlider = ({ title, movies, responsive }) => {
         responsive={responsive}
         autoPlay={getDevice()}
         autoPlaySpeed={2500}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        // removeArrowOnDeviceType={["tablet", "mobile"]}
       >
         {movies.map((movie, index) => (
           <MovieCard movie={movie} key={index} />

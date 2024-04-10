@@ -33,7 +33,7 @@ const MovieDetailPage = () => {
           backgroundImage: `url("${imageURL("original", movie.poster_path)}")`,
         }}
       ></div>
-      <div>
+      <div className="detail-text">
         <h1>{movie.title}</h1>
         <div>
           {showGenre(movie.genre_ids).map((id) => (
