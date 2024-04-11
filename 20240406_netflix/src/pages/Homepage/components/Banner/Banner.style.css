@@ -64,7 +64,7 @@
   color: #fff;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 991px) {
   .banner-text-area {
     position: relative;
   }

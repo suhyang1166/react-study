@@ -9,7 +9,6 @@ const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
 
   const showGenre = (genreIdList) => {
-    console.log(genreIdList);
     if (!genreData) return [];
     const genreNameList = genreIdList.map((id) => {
       const genreObj = genreData.find((genre) => genre.id === id);
@@ -49,6 +48,7 @@ const MovieCard = ({ movie }) => {
         ></div>
         <div className="movie-text">
           <h1>{movie.title}</h1>
+          <p>{movie.release_date}</p>
           <div className="card-genre">
             {showGenre(movie.genre_ids).map((id) => (
               <Badge bg="danger">{id}</Badge>
