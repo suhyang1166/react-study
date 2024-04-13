@@ -7,25 +7,41 @@ import Alert from "react-bootstrap/Alert";
 const Reviews = () => {
   const { id } = useParams();
   const { data: reviews, isLoading, isError, error } = useMovieReviewsQuery(id);
-  const [isShowMore, setIsShowMore] = useState(false);
   const textLimit = useRef(350);
 
+  // 각 리뷰에 대한 isShowMore 상태를 배열로 관리
+  const [isShowMoreArray, setIsShowMoreArray] = useState([]);
+
+  // 초기 상태 설정 (모든 리뷰의 `isShowMore`를 false로 설정)
+  React.useEffect(() => {
+    if (reviews) {
+      setIsShowMoreArray(reviews.map(() => false));
+    }
+  }, [reviews]);
+
+  // 각 리뷰의 `isShowMore` 상태를 변경하는 함수
+  const handleShowMoreToggle = (index) => {
+    setIsShowMoreArray((prev) => {
+      const newArray = [...prev];
+      newArray[index] = !newArray[index];
+      return newArray;
+    });
+  };
+
   const commenter = useMemo(() => {
-    // `reviews`가 존재하고 배열일 때만 map()을 호출
     if (!reviews || !Array.isArray(reviews)) {
       return [];
     } else {
-      return reviews.map((review) => {
-        // `isShowMore` 상태에 따라 전체 리뷰 내용 또는 단축된 리뷰 내용을 반환
+      return reviews.map((review, index) => {
+        const isShowMore = isShowMoreArray[index];
         if (isShowMore) {
           return review.content;
         } else {
-          // `textLimit` 길이까지 잘라서 단축된 리뷰 내용을 반환
           return review.content.slice(0, textLimit.current);
         }
       });
     }
-  }, [reviews, isShowMore]);
+  }, [reviews, isShowMoreArray]);
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -43,9 +59,9 @@ const Reviews = () => {
           {reviews[index].content.length > textLimit.current && (
             <button
               className="review-btn"
-              onClick={() => setIsShowMore((prev) => !prev)}
+              onClick={() => handleShowMoreToggle(index)}
             >
-              {isShowMore ? "닫기" : "더보기"}
+              {isShowMoreArray[index] ? "닫기" : "더보기"}
             </button>
           )}
         </div>

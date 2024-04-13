@@ -20,10 +20,11 @@ const RecommendMovie = () => {
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
   }
+
   return (
     <div className="RecommendMovie-wrap">
-      {movies.map((movie) => (
-        <RecommendMovieCard movie={movie} />
+      {movies.map((movie, index) => (
+        <RecommendMovieCard key={index} movie={movie} />
       ))}
     </div>
   );

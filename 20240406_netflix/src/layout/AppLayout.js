@@ -16,7 +16,6 @@ const AppLayout = () => {
 
   const searchByKeyword = (e) => {
     e.preventDefault();
-    // url을 바꿔주기
     navigate(`/movies?q=${keyword}`);
     setKeyword("");
   };
@@ -24,52 +23,43 @@ const AppLayout = () => {
   return (
     <div className="appLayout">
       <Navbar expand="lg" className="bg-body-tertiary navbar">
-        <Container fluid className="container">
-          <Link to="/" className="link">
-            <Navbar.Brand href="#" className="logoImg link">
-              <p></p>
-            </Navbar.Brand>
-          </Link>
+        <Container fluid>
+          <Navbar.Brand as={Link} to="/" className="link">
+            <div className="logoImg" />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
-            <Nav
-              className="me-auto my-2 my-lg-0"
-              style={{ maxHeight: "100px" }}
-              navbarScroll
-            >
-              <Link to="/">
-                <Nav.Link href="#action1" className="link">
-                  HOME
-                </Nav.Link>
-              </Link>
-              <Link to="/movies">
-                <Nav.Link href="#action2" className="link">
-                  MOVIES
-                </Nav.Link>
-              </Link>
+            <Nav className="me-auto" navbarScroll>
+              <Nav.Link as={Link} to="/" className="link">
+                HOME
+              </Nav.Link>
+              <Nav.Link as={Link} to="/movies" className="link">
+                MOVIES
+              </Nav.Link>
             </Nav>
             <Form className="d-flex" onSubmit={searchByKeyword}>
-              <Button variant="outline-success" type="submit">
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </Button>
               <Form.Control
                 type="search"
                 placeholder="Search"
                 className="me-2"
                 aria-label="Search"
                 value={keyword}
-                onChange={(e) => {
-                  setKeyword(e.target.value);
-                }}
+                onChange={(e) => setKeyword(e.target.value)}
               />
+              <Button variant="outline-success" type="submit">
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+              </Button>
             </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Outlet />
+      <Container fluid className="content">
+        <Outlet />
+      </Container>
       <footer className="footer">
-        <div></div>
-        <p>Welcome to my page</p>
+        <Container>
+          <div />
+        </Container>
       </footer>
     </div>
   );

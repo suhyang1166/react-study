@@ -1,74 +1,34 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
-body {
-  width: 100%;
-  height: 100%;
-  background: #000;
-  color: #fff !important;
-  font-family: "Noto Sans", sans-serif;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+/* appLayout 관련 CSS */
 .appLayout {
   width: 100%;
-  height: 80px;
   z-index: 10;
   background: #000;
   color: #fff;
 }
+
 .navbar {
-  width: 100%;
-  height: auto;
   background-color: #000 !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.container {
-  width: 100%;
-  max-width: 100%;
-  padding: 0 50px;
-  height: 100%;
-  display: inline-block;
-}
+
 .link {
-  display: inline-block;
-  height: 100%;
   color: #fff !important;
 }
+
 .logoImg {
-  display: inline-block;
-  width: 120px;
-}
-.logoImg p {
   width: 120px;
   height: 30px;
   background: url(/public/img/SUUMOVIE.svg) center/contain no-repeat;
-  margin-top: 20px;
 }
-.me-2 {
-  background: #000;
-  color: #fff;
-}
-.me-2::placeholder {
-  color: #fff;
-}
-.me-2:focus {
-  color: #fff;
-  background: rgb(65, 65, 65);
-  outline: #fff;
-  box-shadow: none;
-  border: 1px solid red;
-}
-.btn {
-  color: #fff;
-  border: none;
-}
-.btn:hover {
-  background: none;
-  color: red;
+
+/* 반응형 CSS */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .footer {
+    padding: 10px;
+  }
 }
 
 .footer {
@@ -85,9 +45,4 @@ body {
   width: 300px;
   height: 100px;
   background: url(/public/img/SUUMOVIE.svg) center/contain no-repeat;
-}
-.footer > p {
-  text-transform: uppercase;
-  font-size: 18px;
-  font-weight: bold;
 }
