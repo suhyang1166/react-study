@@ -14,8 +14,6 @@ const RecommendMovie = () => {
     error,
   } = useMovieRecommendationQuery(id);
 
-  console.log("ccc", movies);
-
   if (isLoading) {
     return <h1>Loading...</h1>;
   }

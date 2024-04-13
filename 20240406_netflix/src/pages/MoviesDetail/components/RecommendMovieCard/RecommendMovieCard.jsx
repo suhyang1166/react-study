@@ -2,7 +2,7 @@ import React from "react";
 import "./RecommendMovieCard.style.css";
 import Badge from "react-bootstrap/Badge";
 import "./RecommendMovieCard.style.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useMovieGenreQuery } from "../../../../hooks/useMovieGenre";
 
 const RecommendMovieCard = ({ movie }) => {

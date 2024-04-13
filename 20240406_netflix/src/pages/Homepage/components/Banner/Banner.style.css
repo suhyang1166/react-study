@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Kranky&display=swap");
 .banner {
   width: 100%;
+  max-width: 1920px;
   height: 65vh;
+  display: flex;
+
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,6 +17,7 @@
   left: 0;
   height: 65vh;
   width: 100%;
+  max-width: 1920px;
 }
 .banner-text-area {
   position: absolute;

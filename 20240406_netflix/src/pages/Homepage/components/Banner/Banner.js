@@ -1,8 +1,9 @@
 import React from "react";
 import "./Banner.style.css";
 import Alert from "react-bootstrap/Alert";
-import { usePopularMoviesQuery, imageURL } from "../../../../hooks/useMovies";
+import { imageURL } from "../../../../hooks/useMovies";
 import { useNavigate } from "react-router-dom";
+import { usePopularMoviesQuery } from "../../../../hooks/usePopularMovies";
 
 const Banner = () => {
   const navigate = useNavigate();

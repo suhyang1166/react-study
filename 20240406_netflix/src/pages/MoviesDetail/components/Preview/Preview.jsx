@@ -10,8 +10,6 @@ const Preview = () => {
   const { data: video, isLoading, isError, error } = useMoviePreview(id);
   const [modalShow, setModalShow] = useState(false);
 
-  console.log(video);
-
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
