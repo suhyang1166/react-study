@@ -25,13 +25,9 @@ const RecommendMovieCard = ({ movie }) => {
     ? `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}`
     : "기본 이미지 경로"; // 기본 이미지가 없는 경우에 대한 처리
 
-  const goToMovieDetail = () => {
-    navigate(`/movies/${movie.id}`);
-  };
   return (
     <div
       className="RecommendMovieCard"
-      onClick={goToMovieDetail}
       style={{
         backgroundImage: `url(${imagePath})`,
       }}
