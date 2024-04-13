@@ -1,8 +1,8 @@
 import React from "react";
+import "./RecommendMovie.style.css";
 import { useMovieRecommendationQuery } from "../../../../hooks/useMovieRecommendation";
 import { useParams } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
-import { imageURL } from "../../../../hooks/useMovies";
 import RecommendMovieCard from "../RecommendMovieCard/RecommendMovieCard";
 
 const RecommendMovie = () => {
@@ -23,7 +23,7 @@ const RecommendMovie = () => {
     return <Alert variant="danger">{error.message}</Alert>;
   }
   return (
-    <div>
+    <div className="RecommendMovie-wrap">
       {movies.map((movie) => (
         <RecommendMovieCard movie={movie} />
       ))}

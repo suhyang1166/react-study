@@ -1,0 +1,42 @@
+.MoreBox-wrap {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0 50px;
+}
+.MoreBox {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.more_btn {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+.more_btn.active {
+  border-bottom: 2px solid #b20710;
+  color: #b20710;
+  font-weight: bold;
+}
+.MoreBox-content {
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

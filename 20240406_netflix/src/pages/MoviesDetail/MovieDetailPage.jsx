@@ -26,7 +26,7 @@ const MovieDetailPage = () => {
   };
 
   return (
-    <div>
+    <div className="MovieDetailPage">
       <article className="movie-detail">
         <div
           className="detail-img"

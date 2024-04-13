@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import "./Preview.style.css";
 import { useParams } from "react-router-dom";
 import { useMoviePreview } from "../../../../hooks/useMoviePreview";
-import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 import ModalShow from "./component/ModalShow";
 
@@ -20,10 +20,13 @@ const Preview = () => {
   }
   return (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
+      <button
+        className="preview_btn"
+        variant="primary"
+        onClick={() => setModalShow(true)}
+      >
         예고편 보기
-      </Button>
-
+      </button>
       <ModalShow
         show={modalShow}
         video={video}

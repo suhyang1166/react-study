@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./MoreBox.style.css";
 import Reviews from "../Reviews/Reviews";
 import RecommendMovie from "../RecommendMovie/RecommendMovie";
 
@@ -11,20 +12,34 @@ const MoreBox = () => {
     setCurrentView(view);
   };
 
+  // 각 버튼의 스타일을 조건부로 설정
+  const getButtonClass = (view) => {
+    // 현재 뷰와 비교하여 일치하면 'active' 클래스를 추가
+    return currentView === view ? "more_btn active" : "more_btn";
+  };
+
   return (
-    <div>
-      <div>
+    <div className="MoreBox-wrap">
+      <div className="MoreBox">
         {/* 리뷰 버튼: 클릭 시 'reviews'로 설정 */}
-        <button onClick={() => handleButtonClick("reviews")}>리뷰</button>
-        {/* 추천 버튼: 클릭 시 'recommendMovie'로 설정 */}
-        <button onClick={() => handleButtonClick("recommendMovie")}>
+        <button
+          className={getButtonClass("reviews")}
+          onClick={() => handleButtonClick("reviews")}
+        >
+          리뷰
+        </button>
+        {/* 추천 영화 버튼: 클릭 시 'recommendMovie'로 설정 */}
+        <button
+          className={getButtonClass("recommendMovie")}
+          onClick={() => handleButtonClick("recommendMovie")}
+        >
           추천 영화
         </button>
       </div>
-
-      {/* currentView에 따라 컴포넌트를 조건부 렌더링 */}
-      {currentView === "reviews" && <Reviews />}
-      {currentView === "recommendMovie" && <RecommendMovie />}
+      <div className="MoreBox-content">
+        {currentView === "reviews" && <Reviews />}
+        {currentView === "recommendMovie" && <RecommendMovie />}
+      </div>
     </div>
   );
 };

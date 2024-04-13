@@ -1,6 +1,9 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./ModalShow.style.css";
 import Modal from "react-bootstrap/Modal";
 import YouTube from "react-youtube";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const ModalShow = ({ show, onHide, video }) => {
   const opts = {
@@ -19,7 +22,9 @@ const ModalShow = ({ show, onHide, video }) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header closeButton />
+      <Modal.Header closeButton className="ModalShow">
+        <FontAwesomeIcon className="modal_close" icon={faXmark} />
+      </Modal.Header>
       <Modal.Body style={{ height: "100%" }}>
         {video && video[0]?.key && (
           <YouTube

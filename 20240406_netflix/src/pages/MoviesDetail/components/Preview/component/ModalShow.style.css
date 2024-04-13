@@ -1,0 +1,19 @@
+.modal-content {
+  background: #000;
+  color: #fff;
+}
+.ModalShow {
+  position: relative;
+}
+.modal_close {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.btn-close {
+  opacity: 0;
+}
+.btn-close:hover {
+  opacity: 0;
+}

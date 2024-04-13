@@ -1,0 +1,34 @@
+.RecommendMovieCard {
+  width: 300px;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 10px;
+  position: relative;
+}
+.RecommendMovieCard::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.RecommendMovieCard-text {
+  padding: 15px;
+  transition: all 0.5s;
+}
+.RecommendMovieCard:hover .RecommendMovieCard-text {
+  position: absolute;
+}
+@media (max-width: 500px) {
+  .RecommendMovieCard {
+    width: 100%;
+    height: 300px;
+  }
+  .RecommendMovieCard::before {
+    width: 100%;
+    height: 300px;
+  }
+}

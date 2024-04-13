@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useState } from "react";
+import "./Reviews.style.css";
 import { useMovieReviewsQuery } from "../../../../hooks/useMovieReviews";
 import { useParams } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
@@ -34,13 +35,16 @@ const Reviews = () => {
   }
 
   return (
-    <div>
+    <div className="Reviews">
       {commenter.map((content, index) => (
         <div className="review_wrap" key={index}>
           <h3>{reviews[index].author}</h3>
           <p>{content}</p>
           {reviews[index].content.length > textLimit.current && (
-            <button onClick={() => setIsShowMore((prev) => !prev)}>
+            <button
+              className="review-btn"
+              onClick={() => setIsShowMore((prev) => !prev)}
+            >
               {isShowMore ? "닫기" : "더보기"}
             </button>
           )}

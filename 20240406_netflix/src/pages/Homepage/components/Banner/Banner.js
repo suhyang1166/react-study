@@ -8,7 +8,6 @@ const Banner = () => {
   const navigate = useNavigate();
 
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
-  console.log("ddd", data);
   if (isLoading) {
     return <h1>Loading...</h1>;
   }

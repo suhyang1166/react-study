@@ -1,4 +1,5 @@
 import React from "react";
+import "./RecommendMovieCard.style.css";
 import Badge from "react-bootstrap/Badge";
 import "./RecommendMovieCard.style.css";
 import { useNavigate } from "react-router-dom";
@@ -29,21 +30,14 @@ const RecommendMovieCard = ({ movie }) => {
   };
   return (
     <div
+      className="RecommendMovieCard"
       onClick={goToMovieDetail}
       style={{
         backgroundImage: `url(${imagePath})`,
       }}
     >
-      <div>
-        <div
-          style={{
-            backgroundImage:
-              "url(" +
-              `https://media.themoviedb.org/t/p/w600_and_h900_bestv2${movie.poster_path}` +
-              ")",
-          }}
-        ></div>
-        <div className="movie-text">
+      <div className="RecommendMovieCard-text">
+        <div className="movie-text text-hover">
           <h1>{movie.title}</h1>
           <div className="card-genre">
             {showGenre(movie.genre_ids).map((id) => (
