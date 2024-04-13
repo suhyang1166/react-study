@@ -6,6 +6,7 @@ import Alert from "react-bootstrap/Alert";
 import Badge from "react-bootstrap/Badge";
 import { useParams } from "react-router-dom";
 import MoreBox from "./components/MoreBox/MoreBox";
+import Preview from "./components/Preview/Preview";
 
 const MovieDetailPage = () => {
   const { id } = useParams();
@@ -53,6 +54,7 @@ const MovieDetailPage = () => {
           </div>
           <div>{movie.adult ? "over 18" : "ALL"}</div>
           <div>{movie.overview}</div>
+          <Preview />
         </div>
       </article>
       <MoreBox />

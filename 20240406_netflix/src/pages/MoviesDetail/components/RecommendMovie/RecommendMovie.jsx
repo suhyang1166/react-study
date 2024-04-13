@@ -3,7 +3,7 @@ import { useMovieRecommendationQuery } from "../../../../hooks/useMovieRecommend
 import { useParams } from "react-router-dom";
 import Alert from "react-bootstrap/Alert";
 import { imageURL } from "../../../../hooks/useMovies";
-import MovieCard from "../../../../common/MovieCard/MovieCard";
+import RecommendMovieCard from "../RecommendMovieCard/RecommendMovieCard";
 
 const RecommendMovie = () => {
   const { id } = useParams();
@@ -25,7 +25,7 @@ const RecommendMovie = () => {
   return (
     <div>
       {movies.map((movie) => (
-        <MovieCard movie={movie} />
+        <RecommendMovieCard movie={movie} />
       ))}
     </div>
   );
